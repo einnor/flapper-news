@@ -1,0 +1,39 @@
+{
+  "name": "flapper-news",
+  "homepage": "https://github.com/einnor/flapper-news",
+  "authors": [
+    "Ronnie Nyaga <ronnienyaga@gmail.com>"
+  ],
+  "description": "Reddit/Hacker News clone",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "Reddit",
+    "Hacker",
+    "News",
+    "Posts",
+    "Comments",
+    "Upvote",
+    "Downvote",
+    "Rails",
+    "Ruby",
+    "on",
+    "Rails",
+    "Angular",
+    "AngularJS",
+    "Ruby"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.7"
+  }
+}
