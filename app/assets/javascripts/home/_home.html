@@ -12,6 +12,7 @@
   </span>
   <span ng-hide="post.link">{{ post.title }}</span>
   - {{ post.upvotes }}
+  posted by <a href="#/users/{{post.user.username}}">{{post.user.username}}</a>
 </div>
 
 <form style="margin-top:30px;" ng-submit="addPost()">
