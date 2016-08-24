@@ -80,6 +80,7 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
+    pg (0.18.4)
     pkg-config (1.1.7)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -156,6 +157,7 @@ DEPENDENCIES
   byebug
   devise (~> 3.4.0)
   jbuilder (~> 2.0)
+  pg
   rails (= 4.2.6)
   responders (~> 2.3)
   sass-rails (~> 5.0)

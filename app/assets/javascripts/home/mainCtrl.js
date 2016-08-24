@@ -6,10 +6,12 @@ angular.module('flapperNews')
         if(!$scope.title || $scope.title === ''){ return; }
         posts.create({
           title: $scope.title,
-          link: $scope.link
+          link: $scope.link,
+          summary: $scope.summary
         });
         $scope.title = '';
         $scope.link = '';
+        $scope.summary = '';
       }
 
       $scope.incrementUpvotes = function(post){

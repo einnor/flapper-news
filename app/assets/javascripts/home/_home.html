@@ -2,26 +2,37 @@
   <h1>Flapper News</h1>
 </div>
 
-<div ng-repeat="post in posts | orderBy : '-upvotes'">
-  <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span>
-  <span style="font-size:20px; margin-left:10px;">
-    <a ng-show="post.link" href="{{ post.link }}">{{ post.title }}</a>
-  </span>
-  <span>
-    <a href="#/posts/{{post.id}}">Comments</a>
-  </span>
-  <span ng-hide="post.link">{{ post.title }}</span>
-  - {{ post.upvotes }}
-  posted by <a href="#/users/{{post.user.username}}">{{post.user.username}}</a>
+<div class="wrapper" ng-submit="addPost()">
+  <form class="form-post">
+    <h2 class="form-signin-heading">Add a new post</h2>
+    <div class="form-group-group">
+      <input type="text" class="form-control" name="title" placeholder="Title" required="" autofocus="" ng-model="title" />
+    </div>
+    <br />
+    <div class="form-group-group">
+      <input type="text" class="form-control" name="link" placeholder="Link" required="" ng-model="link" />
+    </div>
+    <br />
+    <div class="form-group-group">
+      <textarea rows="3" class="form-control" name="summary" placeholder="Summary" required="" ng-model="summary" /></textarea>
+    </div>
+    <br />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Post</button>
+  </form>
 </div>
 
-<form style="margin-top:30px;" ng-submit="addPost()">
-  <h3>Add a new post</h3>
-  <div class="form-group">
-    <input class="form-control" type="text" placeholder="Title" ng-model="title">
+<div class="">
+  <div class="form-post" ng-repeat="post in posts | orderBy : '-upvotes'">
+    <h3>
+      <a ng-show="post.link" href="{{ post.link }}">{{ post.title }}</a>
+    </h3>
+    <h3 ng-hide="post.link">{{ post.title }}</h3>
+    posted by <a href="#/users/{{post.user.username}}">{{post.user.username}}</a>
+    <p class="summary">{{ post.summary }}</p>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default"ng-click="incrementUpvotes(post)"><i class="glyphicon glyphicon-thumbs-up"> {{ post.upvotes }}</i></button>
+      <button type="button" class="btn btn-default"ng-click="incrementDownvotes(post)"><i class="glyphicon glyphicon-thumbs-down"> {{ post.downvotes }}</i></button>
+      <a type="button" class="btn btn-default" href="#/posts/{{post.id}}"><i class="glyphicon glyphicon-comment"></i></a>
+    </div>
   </div>
-  <div class="form-group">
-    <input class="form-control" type="text" placeholder="Link" ng-model="link">
-  </div>
-  <button class="btn btn-primary" type="submit">Post</button>
-</form>
+</div>

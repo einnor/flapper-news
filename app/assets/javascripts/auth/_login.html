@@ -1,13 +1,20 @@
-<div class="page-header">
-  <h1>Log In</h1>
-</div>
 
-<form ng-submit="login()">
-  <div class="input-group">
-    <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
-  </div>
-  <div class="input-group">
-    <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
-  </div>
-  <input type="submit" class="btn btn-default" value="Log In">
-</form>
+
+<div class="wrapper" ng-submit="login()">
+  <form class="form-signin">
+    <h2 class="form-signin-heading">Please login</h2>
+    <div class="form-group-group">
+      <input type="email" class="form-control" name="email" placeholder="Email Address" required="" autofocus="" ng-model="user.email" />
+    </div>
+    <br />
+    <div class="form-group-group">
+      <input type="password" class="form-control" name="password" placeholder="Password" required="" ng-model="user.password" />
+    </div>
+    <div class="form-group-group">
+      <label class="checkbox" style="margin-left:20px;">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+  </form>
+</div>

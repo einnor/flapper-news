@@ -17,6 +17,10 @@ class CommentsController < ApplicationController
     respond_with post, comment
   end
 
+  def as_json(options = {})
+    super(options.merge(include: :user))
+  end
+
   private
 
   def comment_params
